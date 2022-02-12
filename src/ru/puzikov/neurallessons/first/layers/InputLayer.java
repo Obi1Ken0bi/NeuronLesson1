@@ -9,7 +9,6 @@ public class InputLayer extends Layer {
 
     public InputLayer(int numberOfNeuronsInLayer, int numberOfArgs) {
         super(numberOfNeuronsInLayer, func, numberOfArgs);
-
     }
 
 
