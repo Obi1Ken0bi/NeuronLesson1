@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class Neuron {
-    static Random random = new Random();
+    static final Random random = new Random();
     private final double bias;
     private final double[] weights;
     private final Function<Double, Double> func;
