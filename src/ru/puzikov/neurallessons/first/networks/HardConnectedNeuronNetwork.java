@@ -1,4 +1,4 @@
-package ru.puzikov.neurallessons.first.netoworks;
+package ru.puzikov.neurallessons.first.networks;
 
 import ru.puzikov.neurallessons.first.Neuron;
 

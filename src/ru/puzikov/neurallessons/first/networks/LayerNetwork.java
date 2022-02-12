@@ -1,4 +1,4 @@
-package ru.puzikov.neurallessons.first.netoworks;
+package ru.puzikov.neurallessons.first.networks;
 
 import org.jetbrains.annotations.NotNull;
 import ru.puzikov.neurallessons.first.layers.HiddenLayer;
