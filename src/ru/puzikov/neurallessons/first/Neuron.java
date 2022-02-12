@@ -1,20 +1,20 @@
 package ru.puzikov.neurallessons.first;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Random;
 import java.util.function.Function;
 
 public class Neuron {
     static Random random = new Random();
-    private double[] args;
     private final double bias;
     private final double[] weights;
     private final Function<Double, Double> func;
+    int numberOfInput;
+    private double[] args;
 
-    public Neuron(double @NotNull [] args, Function<Double, Double> func) {
-        this.args = args;
+    public Neuron(int numberOfInput, Function<Double, Double> func) {
+        this.numberOfInput = numberOfInput;
         this.func = func;
+        args = new double[numberOfInput];
 
         weights = new double[args.length];
         for (int i = 0; i < weights.length; i++) {
@@ -22,6 +22,7 @@ public class Neuron {
         }
         bias = random.nextDouble() + 1;
     }
+
 
     public double process() {
         return func.apply(sum());

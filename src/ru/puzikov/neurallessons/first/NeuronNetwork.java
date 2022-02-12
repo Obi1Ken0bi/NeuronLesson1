@@ -13,8 +13,9 @@ public class NeuronNetwork {
         this.neurons = new Neuron[numberOfNeurons];
         this.input = input;
         for (int i = 0; i < numberOfNeurons; i++) {
-            neurons[i] = new Neuron(input, functions[i]);
+            neurons[i] = new Neuron(input.length, functions[i]);
         }
+        updateNeuronsInput(input);
 
     }
 
@@ -24,9 +25,9 @@ public class NeuronNetwork {
         return output;
     }
 
-    private void updateNeuronsInput(double[] neuronsOutput) {
+    private void updateNeuronsInput(double[] newInput) {
         for (Neuron n : neurons) {
-            n.setArgs(neuronsOutput);
+            n.setArgs(newInput);
         }
     }
 
