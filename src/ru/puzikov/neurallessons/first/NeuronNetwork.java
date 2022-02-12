@@ -5,13 +5,9 @@ import java.util.function.Function;
 
 public class NeuronNetwork {
     private final Neuron[] neurons;
-    private final Function<Double, Double>[] functions;
-    private final double[] input;
 
     public NeuronNetwork(Integer numberOfNeurons, double[] input, Function<Double, Double>[] functions) {
-        this.functions = functions;
         this.neurons = new Neuron[numberOfNeurons];
-        this.input = input;
         for (int i = 0; i < numberOfNeurons; i++) {
             neurons[i] = new Neuron(input.length, functions[i]);
         }
@@ -20,7 +16,7 @@ public class NeuronNetwork {
     }
 
     public double[] compute() {
-        double[] output = Arrays.stream(neurons).mapToDouble(neuron -> neuron.process()).toArray();
+        double[] output = Arrays.stream(neurons).mapToDouble(Neuron::process).toArray();
         updateNeuronsInput(output);
         return output;
     }

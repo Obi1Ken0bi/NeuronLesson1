@@ -8,11 +8,9 @@ public class Neuron {
     private final double bias;
     private final double[] weights;
     private final Function<Double, Double> func;
-    int numberOfInput;
     private double[] args;
 
     public Neuron(int numberOfInput, Function<Double, Double> func) {
-        this.numberOfInput = numberOfInput;
         this.func = func;
         args = new double[numberOfInput];
 
