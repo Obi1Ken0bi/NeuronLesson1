@@ -7,8 +7,8 @@ public class InputLayer extends Layer {
     private double[] args;
 
 
-    public InputLayer(int numberOfNeuronsInLayer, int numberOfArgs) {
-        super(numberOfNeuronsInLayer, func, numberOfArgs);
+    public InputLayer(int numberOfNeuronsInLayer) {
+        super(numberOfNeuronsInLayer, func, numberOfNeuronsInLayer);
     }
 
 

@@ -11,12 +11,12 @@ import java.util.function.Function;
 public class LayerNetwork {
     private final Layer[] layers;
 
-    public LayerNetwork(int numberOfLayers, int @NotNull [] numbersOfNeurons, Function<Double, Double> @NotNull [] functions, int @NotNull [] numberOfArgs) {
+    public LayerNetwork(int numberOfLayers, int @NotNull [] numbersOfNeurons, Function<Double, Double> @NotNull [] functions) {
         layers = new Layer[numberOfLayers];
-        layers[0] = new InputLayer(numberOfArgs.length, numberOfArgs[0]);
-        layers[numberOfLayers - 1] = new OutputLayer(numbersOfNeurons[numberOfLayers - 1], functions[numberOfLayers - 1], numberOfArgs[numberOfArgs.length - 1]);
+        layers[0] = new InputLayer(numbersOfNeurons[0]);
+        layers[numberOfLayers - 1] = new OutputLayer(numbersOfNeurons[numberOfLayers - 1], functions[numberOfLayers - 1], numbersOfNeurons[numbersOfNeurons.length-2]);
         for (int i = 1; i < numberOfLayers - 1; i++) {
-            layers[i] = new HiddenLayer(numbersOfNeurons[i], functions[i], numberOfArgs[i]);
+            layers[i] = new HiddenLayer(numbersOfNeurons[i], functions[i], numbersOfNeurons[i-1]);
         }
     }
 
