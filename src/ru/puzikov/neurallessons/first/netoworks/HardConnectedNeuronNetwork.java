@@ -1,12 +1,14 @@
-package ru.puzikov.neurallessons.first;
+package ru.puzikov.neurallessons.first.netoworks;
+
+import ru.puzikov.neurallessons.first.Neuron;
 
 import java.util.Arrays;
 import java.util.function.Function;
 
-public class NeuronNetwork {
+public class HardConnectedNeuronNetwork {
     private final Neuron[] neurons;
 
-    public NeuronNetwork(Integer numberOfNeurons, double[] input, Function<Double, Double>[] functions) {
+    public HardConnectedNeuronNetwork(Integer numberOfNeurons, double[] input, Function<Double, Double>[] functions) {
         this.neurons = new Neuron[numberOfNeurons];
         for (int i = 0; i < numberOfNeurons; i++) {
             neurons[i] = new Neuron(input.length, functions[i]);
