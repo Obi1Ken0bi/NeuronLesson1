@@ -1,5 +1,6 @@
 package ru.puzikov.neurallessons.first.layers;
 
+
 import java.util.Arrays;
 import java.util.function.Function;
 

@@ -1,8 +1,9 @@
 package ru.puzikov.neurallessons.first;
 
+import lombok.Builder;
+
 import java.util.Random;
 import java.util.function.Function;
-
 public class Neuron {
     static final Random random = new Random();
     private final double bias;
@@ -16,9 +17,9 @@ public class Neuron {
 
         weights = new double[args.length];
         for (int i = 0; i < weights.length; i++) {
-            weights[i] = random.nextDouble() + 1;
+            weights[i] =2;// random.nextDouble() + 1;
         }
-        bias = random.nextDouble() + 1;
+        bias = 5;//random.nextDouble() + 1;
     }
 
 
