@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class InputLayer extends Layer {
     private static final Function<Double, Double> func = x -> x;
-    private double[] args ;
+    private double[] args;
 
 
     public InputLayer(int numberOfNeuronsInLayer) {
@@ -15,7 +15,7 @@ public class InputLayer extends Layer {
 
     @Override
     public void setArgs(double[] args) {
-        System.out.println("Аргументы на inputLayer: "+Arrays.toString(args));
+        System.out.println("Аргументы на inputLayer: " + Arrays.toString(args));
         this.args = args;
     }
 

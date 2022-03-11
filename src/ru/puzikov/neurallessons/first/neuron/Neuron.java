@@ -1,9 +1,8 @@
-package ru.puzikov.neurallessons.first;
-
-import lombok.Builder;
+package ru.puzikov.neurallessons.first.neuron;
 
 import java.util.Random;
 import java.util.function.Function;
+
 public class Neuron {
     static final Random random = new Random();
     private final double bias;
@@ -16,10 +15,23 @@ public class Neuron {
         args = new double[numberOfInput];
 
         weights = new double[args.length];
+        randomizeWeights();
+        bias = random.nextDouble() + 1;
+    }
+
+    public Neuron(int numberOfInput) {
+        this.func = NeuronFunctions.activators().getSigmoid();
+        args = new double[numberOfInput];
+
+        weights = new double[args.length];
+        randomizeWeights();
+        bias = random.nextDouble() + 1;
+    }
+
+    private void randomizeWeights() {
         for (int i = 0; i < weights.length; i++) {
-            weights[i] =2;// random.nextDouble() + 1;
+            weights[i] = random.nextDouble() + 1;
         }
-        bias = 5;//random.nextDouble() + 1;
     }
 
 
@@ -38,5 +50,9 @@ public class Neuron {
 
     public void setArgs(double[] args) {
         this.args = args;
+    }
+
+    public double[] getWeights() {
+        return weights;
     }
 }

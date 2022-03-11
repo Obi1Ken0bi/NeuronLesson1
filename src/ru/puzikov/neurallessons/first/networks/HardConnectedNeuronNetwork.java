@@ -1,6 +1,6 @@
 package ru.puzikov.neurallessons.first.networks;
 
-import ru.puzikov.neurallessons.first.Neuron;
+import ru.puzikov.neurallessons.first.neuron.Neuron;
 
 import java.util.Arrays;
 import java.util.function.Function;

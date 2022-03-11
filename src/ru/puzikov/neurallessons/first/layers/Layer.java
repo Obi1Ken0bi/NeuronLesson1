@@ -1,9 +1,10 @@
 package ru.puzikov.neurallessons.first.layers;
 
-import ru.puzikov.neurallessons.first.Neuron;
+import ru.puzikov.neurallessons.first.neuron.Neuron;
 
 import java.util.Arrays;
 import java.util.function.Function;
+
 public abstract class Layer {
     private final Neuron[] neurons;
 
